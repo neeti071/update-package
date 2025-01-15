@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Test Sudo Access
+      command: whoami
+      register: result
+
+    - debug:
+        var: result.stdout
